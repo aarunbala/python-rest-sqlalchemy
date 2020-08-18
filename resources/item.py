@@ -29,7 +29,7 @@ class Item(Resource):
         item = ItemModel.find_by_name(name)
         if item:
             item.delete_from_db()
-        return {'message': f'Item {name} deleted'}
+        return {'message': "Item {} deleted".format(name)}
 
     @jwt_required()
     def post(self, name):
